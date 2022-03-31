@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Ch12Database
 {
-    //continue 1:32:55
+
     public partial class Form1 : Form
     {
         public Form1()

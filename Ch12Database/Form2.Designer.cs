@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.cDInventory_20171_CDInventory = new Ch12Database.CDInventory_20171_CDInventory();
-            this.cDInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cDInventoryTableAdapter = new Ch12Database.CDInventory_20171_CDInventoryTableAdapters.CDInventoryTableAdapter();
-            this.tableAdapterManager = new Ch12Database.CDInventory_20171_CDInventoryTableAdapters.TableAdapterManager();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cDInventoryBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -48,39 +48,27 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cDInventoryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.cDInventoryDataGridView = new System.Windows.Forms.DataGridView();
+            this.btnDetails = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDetails = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.cDInventory_20171_CDInventory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDInventoryBindingSource)).BeginInit();
+            this.cDInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cDInventory_20171_CDInventory = new Ch12Database.CDInventory_20171_CDInventory();
+            this.cDInventoryTableAdapter = new Ch12Database.CDInventory_20171_CDInventoryTableAdapters.CDInventoryTableAdapter();
+            this.tableAdapterManager = new Ch12Database.CDInventory_20171_CDInventoryTableAdapters.TableAdapterManager();
+            this.fillByJazzToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBoxGenre = new System.Windows.Forms.ToolStripTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.cDInventoryBindingNavigator)).BeginInit();
             this.cDInventoryBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cDInventoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDInventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDInventory_20171_CDInventory)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cDInventory_20171_CDInventory
-            // 
-            this.cDInventory_20171_CDInventory.DataSetName = "CDInventory_20171_CDInventory";
-            this.cDInventory_20171_CDInventory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cDInventoryBindingSource
-            // 
-            this.cDInventoryBindingSource.DataMember = "CDInventory";
-            this.cDInventoryBindingSource.DataSource = this.cDInventory_20171_CDInventory;
-            // 
-            // cDInventoryTableAdapter
-            // 
-            this.cDInventoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CDInventoryTableAdapter = this.cDInventoryTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Ch12Database.CDInventory_20171_CDInventoryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // cDInventoryBindingNavigator
             // 
@@ -101,7 +89,11 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.cDInventoryBindingNavigatorSaveItem});
+            this.cDInventoryBindingNavigatorSaveItem,
+            this.fillByJazzToolStripButton,
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripTextBoxGenre});
             this.cDInventoryBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.cDInventoryBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.cDInventoryBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -109,7 +101,7 @@
             this.cDInventoryBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.cDInventoryBindingNavigator.Name = "cDInventoryBindingNavigator";
             this.cDInventoryBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.cDInventoryBindingNavigator.Size = new System.Drawing.Size(854, 27);
+            this.cDInventoryBindingNavigator.Size = new System.Drawing.Size(862, 27);
             this.cDInventoryBindingNavigator.TabIndex = 0;
             this.cDInventoryBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -221,16 +213,28 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.cDInventoryDataGridView.DataSource = this.cDInventoryBindingSource;
-            this.cDInventoryDataGridView.Location = new System.Drawing.Point(12, 57);
+            this.cDInventoryDataGridView.Location = new System.Drawing.Point(12, 52);
             this.cDInventoryDataGridView.Name = "cDInventoryDataGridView";
             this.cDInventoryDataGridView.RowHeadersWidth = 51;
             this.cDInventoryDataGridView.RowTemplate.Height = 24;
             this.cDInventoryDataGridView.Size = new System.Drawing.Size(830, 220);
             this.cDInventoryDataGridView.TabIndex = 1;
             // 
+            // btnDetails
+            // 
+            this.btnDetails.Location = new System.Drawing.Point(12, 329);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(98, 32);
+            this.btnDetails.TabIndex = 2;
+            this.btnDetails.Text = "Details";
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "InvNumber";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn1.HeaderText = "InvNumber";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -255,6 +259,9 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Price";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn4.HeaderText = "Price";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -263,6 +270,8 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Quantity";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn5.HeaderText = "Quantity";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -271,38 +280,85 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "GenreId";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn6.HeaderText = "GenreId";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 125;
             // 
-            // btnDetails
+            // cDInventoryBindingSource
             // 
-            this.btnDetails.Location = new System.Drawing.Point(12, 329);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(98, 32);
-            this.btnDetails.TabIndex = 2;
-            this.btnDetails.Text = "Details";
-            this.btnDetails.UseVisualStyleBackColor = true;
-            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
+            this.cDInventoryBindingSource.DataMember = "CDInventory";
+            this.cDInventoryBindingSource.DataSource = this.cDInventory_20171_CDInventory;
+            // 
+            // cDInventory_20171_CDInventory
+            // 
+            this.cDInventory_20171_CDInventory.DataSetName = "CDInventory_20171_CDInventory";
+            this.cDInventory_20171_CDInventory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cDInventoryTableAdapter
+            // 
+            this.cDInventoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CDInventoryTableAdapter = this.cDInventoryTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Ch12Database.CDInventory_20171_CDInventoryTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // fillByJazzToolStripButton
+            // 
+            this.fillByJazzToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByJazzToolStripButton.Name = "fillByJazzToolStripButton";
+            this.fillByJazzToolStripButton.Size = new System.Drawing.Size(93, 24);
+            this.fillByJazzToolStripButton.Text = "Display Jazz";
+            this.fillByJazzToolStripButton.Click += new System.EventHandler(this.fillByJazzToolStripButton_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(84, 24);
+            this.toolStripButton1.Text = "Display All";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(62, 24);
+            this.toolStripButton2.Text = "Display";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripTextBoxGenre
+            // 
+            this.toolStripTextBoxGenre.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBoxGenre.Name = "toolStripTextBoxGenre";
+            this.toolStripTextBoxGenre.Size = new System.Drawing.Size(100, 27);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 450);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(862, 450);
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.cDInventoryDataGridView);
             this.Controls.Add(this.cDInventoryBindingNavigator);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.cDInventory_20171_CDInventory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDInventoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDInventoryBindingNavigator)).EndInit();
             this.cDInventoryBindingNavigator.ResumeLayout(false);
             this.cDInventoryBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cDInventoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDInventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDInventory_20171_CDInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,12 +384,16 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton cDInventoryBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView cDInventoryDataGridView;
+        private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Button btnDetails;
+        private System.Windows.Forms.ToolStripButton fillByJazzToolStripButton;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxGenre;
     }
 }

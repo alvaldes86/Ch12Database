@@ -47,5 +47,48 @@ namespace Ch12Database
             DetailsForm myForm = new DetailsForm();
             myForm.ShowDialog();
         }
+
+        private void fillByJazzToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.cDInventoryTableAdapter.FillByJazz
+                    (this.cDInventory_20171_CDInventory.CDInventory);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // TODO: This line of code loads data into the 'cDInventory_20171_CDInventory.CDInventory' table. You can move, or remove it, as needed.
+                this.cDInventoryTableAdapter.Fill
+                    (this.cDInventory_20171_CDInventory.CDInventory);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // TODO: This line of code loads data into the 'cDInventory_20171_CDInventory.CDInventory' table. You can move, or remove it, as needed.
+                this.cDInventoryTableAdapter.FillByGenreId
+                    (this.cDInventory_20171_CDInventory.CDInventory, int.Parse(toolStripTextBoxGenre.Text));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

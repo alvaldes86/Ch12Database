@@ -856,10 +856,10 @@ namespace Ch12Database.CDInventory_20171_CDInventoryTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[CDInventory] WHERE (([InvNumber] = @Original_InvNumber) AND ([" +
-                "Title] = @Original_Title) AND ([Artist] = @Original_Artist) AND ([Price] = @Orig" +
-                "inal_Price) AND ([Quantity] = @Original_Quantity) AND ([GenreId] = @Original_Gen" +
-                "reId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [CDInventory] WHERE (([InvNumber] = @Original_InvNumber) AND ([Title]" +
+                " = @Original_Title) AND ([Artist] = @Original_Artist) AND ([Price] = @Original_P" +
+                "rice) AND ([Quantity] = @Original_Quantity) AND ([GenreId] = @Original_GenreId))" +
+                "";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_InvNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InvNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -869,8 +869,8 @@ namespace Ch12Database.CDInventory_20171_CDInventoryTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GenreId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GenreId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[CDInventory] ([InvNumber], [Title], [Artist], [Price], [Quantity], [GenreId]) VALUES (@InvNumber, @Title, @Artist, @Price, @Quantity, @GenreId);
-SELECT InvNumber, Title, Artist, Price, Quantity, GenreId FROM CDInventory WHERE (InvNumber = @InvNumber)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [CDInventory] ([InvNumber], [Title], [Artist], [Price], [Quantity], [GenreId]) VALUES (@InvNumber, @Title, @Artist, @Price, @Quantity, @GenreId);
+SELECT InvNumber, Title, Artist, Price, Quantity, GenreId FROM CDInventory WHERE (InvNumber = @InvNumber) ORDER BY InvNumber";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InvNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InvNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -880,8 +880,8 @@ SELECT InvNumber, Title, Artist, Price, Quantity, GenreId FROM CDInventory WHERE
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GenreId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GenreId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CDInventory] SET [InvNumber] = @InvNumber, [Title] = @Title, [Artist] = @Artist, [Price] = @Price, [Quantity] = @Quantity, [GenreId] = @GenreId WHERE (([InvNumber] = @Original_InvNumber) AND ([Title] = @Original_Title) AND ([Artist] = @Original_Artist) AND ([Price] = @Original_Price) AND ([Quantity] = @Original_Quantity) AND ([GenreId] = @Original_GenreId));
-SELECT InvNumber, Title, Artist, Price, Quantity, GenreId FROM CDInventory WHERE (InvNumber = @InvNumber)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [CDInventory] SET [InvNumber] = @InvNumber, [Title] = @Title, [Artist] = @Artist, [Price] = @Price, [Quantity] = @Quantity, [GenreId] = @GenreId WHERE (([InvNumber] = @Original_InvNumber) AND ([Title] = @Original_Title) AND ([Artist] = @Original_Artist) AND ([Price] = @Original_Price) AND ([Quantity] = @Original_Quantity) AND ([GenreId] = @Original_GenreId));
+SELECT InvNumber, Title, Artist, Price, Quantity, GenreId FROM CDInventory WHERE (InvNumber = @InvNumber) ORDER BY InvNumber";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InvNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InvNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -907,11 +907,23 @@ SELECT InvNumber, Title, Artist, Price, Quantity, GenreId FROM CDInventory WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT InvNumber, Title, Artist, Price, Quantity, GenreId FROM dbo.CDInventory";
+            this._commandCollection[0].CommandText = "SELECT InvNumber, Title, Artist, Price, Quantity, GenreId\r\nFROM     CDInventory\r\n" +
+                "ORDER BY InvNumber";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT InvNumber, Title, Artist, Price, Quantity, GenreId\r\nFROM     CDInventory\r\n" +
+                "WHERE  (GenreId = @GenreId)\r\nORDER BY InvNumber";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GenreId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "GenreId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT InvNumber, Title, Artist, Price, Quantity, GenreId\r\nFROM     CDInventory\r\n" +
+                "WHERE  (GenreId = 4)\r\nORDER BY InvNumber";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -936,6 +948,45 @@ SELECT InvNumber, Title, Artist, Price, Quantity, GenreId FROM CDInventory WHERE
             CDInventory_20171_CDInventory.CDInventoryDataTable dataTable = new CDInventory_20171_CDInventory.CDInventoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByGenreId(CDInventory_20171_CDInventory.CDInventoryDataTable dataTable, int GenreId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(GenreId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual CDInventory_20171_CDInventory.CDInventoryDataTable GetDataByGenreId(int GenreId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(GenreId));
+            CDInventory_20171_CDInventory.CDInventoryDataTable dataTable = new CDInventory_20171_CDInventory.CDInventoryDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByJazz(CDInventory_20171_CDInventory.CDInventoryDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
