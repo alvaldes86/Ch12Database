@@ -27,9 +27,25 @@ namespace Ch12Database
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cDInventory_20171_CDInventory.CDInventory' table. You can move, or remove it, as needed.
-            this.cDInventoryTableAdapter.Fill(this.cDInventory_20171_CDInventory.CDInventory);
+           
+            try
+            {
+                // TODO: This line of code loads data into the 'cDInventory_20171_CDInventory.CDInventory' table. You can move, or remove it, as needed.
+                this.cDInventoryTableAdapter.Fill
+                    (this.cDInventory_20171_CDInventory.CDInventory);
 
+            }
+            catch (Exception ex)
+            {
+
+               
+            }
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            DetailsForm myForm = new DetailsForm();
+            myForm.ShowDialog();
         }
     }
 }

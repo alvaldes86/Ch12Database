@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ch12Database
 {
-    public partial class Form3 : Form
+    public partial class DetailsForm : Form
     {
-        public Form3()
+        public DetailsForm()
         {
             InitializeComponent();
         }
@@ -27,10 +27,19 @@ namespace Ch12Database
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cDInventory_20171_CDInventory.CDInventory' table.
-            // You can move, or remove it, as needed.
-            this.cDInventoryTableAdapter.Fill
-                (this.cDInventory_20171_CDInventory.CDInventory);
+            try
+            {
+                // TODO: This line of code loads data into the 'cDInventory_20171_CDInventory.CDInventory' table.
+                // You can move, or remove it, as needed.
+                this.cDInventoryTableAdapter.Fill
+                    (this.cDInventory_20171_CDInventory.CDInventory);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.ToString(), "Database Error");
+            }
+
 
         }
     }
